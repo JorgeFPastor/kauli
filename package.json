@@ -1,13 +1,14 @@
 {
   "name": "kauli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Extremely simple and lightweight jQuery-like library",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "kauli.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeFPastor/kauli.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["simple", "lightweight", "jQuery"],
+  "author": "JorgeFPastor",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.16.0",

@@ -19,7 +19,7 @@
   },
   "keywords": ["simple", "lightweight", "jQuery"],
   "author": "JorgeFPastor",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^7.16.0",
     "eslint-config-standard": "^16.0.2",

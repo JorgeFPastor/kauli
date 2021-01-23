@@ -203,6 +203,7 @@ class DomElement {
         this.elems[i].classList.add(c)
       }
     } else {
+      this.elems.classList.add(c)
     }
   }
 

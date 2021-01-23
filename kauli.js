@@ -205,6 +205,7 @@ class DomElement {
     } else {
       this.elems.classList.add(c)
     }
+    return new DomElement(this.elems)
   }
 
   delClass (c) {

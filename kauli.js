@@ -338,43 +338,27 @@ class DomElement {
 
 window.$ = selector => new DomElement(selector)
 
-window.$.get = url => {
+window$.get = url => {
   return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', url, true)
-    xhr.onload = function () {
-      const DONE = 4
-      const OK = 200
-      const CREATED = 201
-      if (xhr.readyState === DONE) {
-        if (xhr.status === OK || xhr.status === CREATED) {
-          resolve(xhr.responseText)
-        } else {
-          reject(xhr.status)
-        }
-      }
-    }
-    xhr.send()
+    fetch(url)
+      .then(resolve)
+      .catch(reject)
   })
 }
 
 window.$.post = (url, json) => {
+  const headers = new Headers()
+  headers.append('Content-Type', 'application/json')
+  const options = {
+    method: 'POST',
+    headers,
+    credentials: 'include',
+    body: JSON.stringify(json)
+  }
   return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest()
-    xhr.open('POST', url, true)
-    xhr.setRequestHeader('Content-Type', 'application/json')
-    xhr.onload = function () {
-      const DONE = 4
-      const OK = 200
-      const CREATED = 201
-      if (xhr.readyState === DONE) {
-        if (xhr.status === OK || xhr.status === CREATED) {
-          return resolve(xhr.responseText)
-        }
-        reject(xhr.status)
-      }
-    }
-    xhr.send(JSON.stringify(json))
+    fetch(url, options)
+      .then(resolve)
+      .catch(reject)
   })
 }
 

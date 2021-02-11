@@ -1,6 +1,6 @@
 {
   "name": "kauli",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Extremely simple and lightweight jQuery-like library",
   "main": "kauli.js",
   "repository": {

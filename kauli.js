@@ -338,7 +338,7 @@ class DomElement {
 
 window.$ = selector => new DomElement(selector)
 
-window$.get = url => {
+window.$.get = url => {
   return new Promise((resolve, reject) => {
     fetch(url)
       .then(resolve)
